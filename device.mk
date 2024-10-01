@@ -598,11 +598,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
         ConnectivityOverlay
 
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES_DEBUG += \
 	f2fs_io \
 	check_f2fs \
 	f2fs.fibmap \
 	dump.f2fs
+endif
 
 # Storage health HAL
 PRODUCT_PACKAGES += \
