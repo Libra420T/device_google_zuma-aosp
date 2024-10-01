@@ -28,3 +28,6 @@ AB_OTA_PARTITIONS += \
     
 # Verified Boot
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+
+# Reserve space for gapps install
+-include vendor/rom/config/BoardConfigReservedSize.mk
