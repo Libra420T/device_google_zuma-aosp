@@ -629,8 +629,10 @@ ifeq (,$(filter true, $(BOARD_WITHOUT_DTLS)))
 include device/google/gs-common/dauntless/gsc.mk
 endif
 
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES_DEBUG += \
 	WvInstallKeybox
+endif
 
 # Copy Camera HFD Setfiles
 #PRODUCT_COPY_FILES += \
