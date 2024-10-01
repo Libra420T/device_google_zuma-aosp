@@ -14,6 +14,9 @@
 # limitations under the License.
 #
 
+# Blur
+TARGET_ENABLE_BLUR := true
+
 # Face Unlock
 include vendor/google/faceunlock/device.mk
 
