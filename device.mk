@@ -832,11 +832,13 @@ $(call inherit-product, system/core/trusty/trusty-storage.mk)
 $(call inherit-product, system/core/trusty/trusty-base.mk)
 
 # Trusty unit test tool and code coverage tool
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES_DEBUG += \
    trusty-ut-ctrl \
    tipc-test \
    trusty_stats_test \
-   trusty-coverage-controller \
+   trusty-coverage-controller
+endif
 
 include device/google/gs101/confirmationui/confirmationui.mk
 
