@@ -1013,12 +1013,13 @@ PRODUCT_PACKAGES += \
 
 endif
 
-# Vibrator Diag
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES_DEBUG += \
 	diag-vibrator \
 	diag-vibrator-cs40l25a \
 	diag-vibrator-drv2624 \
 	$(NULL)
+endif
 
 PRODUCT_PACKAGES += \
 	android.hardware.health-service.zuma \
@@ -1160,7 +1161,9 @@ USES_RADIOEXT_V1_6 = true
 include hardware/google/pixel/wifi_ext/device.mk
 
 # Battery Stats Viewer
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES_DEBUG += BatteryStatsViewer
+endif
 
 # Install product specific framework compatibility matrix
 # (TODO: b/169535506) This includes the FCM for system_ext and product partition.
