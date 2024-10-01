@@ -1186,7 +1186,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 include hardware/google/pixel/HardwareInfo/HardwareInfo.mk
 
 # UFS: the script is used to select the corresponding firmware to run FFU.
+ifneq (,$(filter eng, $(TARGET_BUILD_VARIANT)))
 PRODUCT_PACKAGES_DEBUG += ufs_firmware_update.sh
+endif
 
 # RIL extension service
 ifeq (,$(filter aosp_% factory_%,$(TARGET_PRODUCT)))
